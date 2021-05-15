@@ -1,5 +1,5 @@
 import React ,{useState,useEffect} from 'react'
-import Logo from '../utils/netflix-logo.png'
+import Logo from '../utils/netflix-logo-removebg-preview.png'
 import Avatar from '../utils/avatar.png'
 import './Nav.css'
 
