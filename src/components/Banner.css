@@ -1,17 +1,36 @@
 .banner{
     color: #fff;
-    height: 500px;
+    height: 80vh;
     object-fit: contain;
+   
     
 }
 .banner__content{
-    padding-top: 160px;
-    margin-left: 30px;
+    padding-top: 200px;
+    margin-left: 50px;
 }
-.fade__bottom{
-    height: 200px;
-    background-image: linear-gradient( 180deg transparent rgba(37,37,37,0.61) #111);
-}
+
 .movie__desc{
-    width: 300px;
+    width: 400px;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+.movie__title{
+    font-size: 2.5rem;
+    font-weight: 600;
+}
+.banner__button{
+    border: none;
+    width: 100px;
+    font-size: 14px;
+    font-weight: 600;
+    margin-right: 10px;
+    padding: 12px;
+    border-radius: 4px;
+    color: #fff;
+    background-color: rgba(109, 108, 108, 0.4);
+}
+.banner__button:hover{
+    background-color: rgb(253, 252, 252,0.4);
 }

@@ -1,0 +1,23 @@
+
+.row__container{
+    margin-left: 50px;
+}
+h1{
+    font-size: 1.4rem;
+}
+.row__img{
+    display: flex;
+    overflow-y:hidden;
+    overflow-x: scroll;
+}
+.row__img::-webkit-scrollbar {
+    display: none;
+  }
+.row_img{
+    height: 160px !important;
+    padding: 5px;
+    border-radius: 8%;
+}
+.row_img:hover{
+    transform: scale(1.2);
+}

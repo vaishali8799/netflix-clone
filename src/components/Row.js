@@ -1,8 +1,9 @@
 //import axios from 'axios';
+import './Row.css'
 import axios from '../utils/axios'
 import React,{useState,useEffect} from 'react'
 
-const Row = ({title,fetchUrl}) => {
+const Row = ({title,fetchUrl,isLarge=false}) => {
     const baseUrl='https://image.tmdb.org/t/p/original/';
     const [movies, setmovies] = useState([]);
     useEffect(() => {
@@ -13,12 +14,14 @@ const Row = ({title,fetchUrl}) => {
         .catch(err=>console.log(err))
     }, [fetchUrl])
     return (
-        <div>
+        <div className="row__container">
             <h1>{title}</h1>
-            <div >
-                {movies.map(movie=>(
-                    <img style=
-                    {{height:'200px',width:'200px'}}src={`${baseUrl}${movie.poster_path}`} alt={movie.name}></img>
+            <div className="row__img" >
+                {movies.map(movie=>(movie.poster_path &&(
+                    <img className="row_img"
+                        src={`${baseUrl}${movie.poster_path}`}
+                        alt={movie.name}
+                        key={movie.id}></img>)
                 ))}
             </div>
         </div>
