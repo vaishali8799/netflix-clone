@@ -44,13 +44,17 @@ const Row = ({title,fetchUrl}) => {
     return (
         <div className="row__container">
             <h1>{title}</h1>
-            <div className="row__img">
-                {movies.map(movie=>(movie.poster_path &&(
+            <div className="row__img ">
+            
+                {movies.map(movie => (movie.poster_path && (
+                    <div className="tooltip">
+                    <span class="tooltiptext">Click to Preview</span>
                     <img className="row_img"
                         key={movie.id}    
                         src={`${baseUrl}${movie.poster_path}`}
                         alt={movie.name}
-                        onClick={()=>handleTrailer(movie)}></img>)
+                            onClick={() => handleTrailer(movie)}></img>
+                        </div>)
                 ))}
                </div>
             {trailer && <YouTube videoId={trailer} opts={opts} />}

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import {useHistory} from 'react-router-dom'
+import { useHistory} from 'react-router-dom'
 import Logo from '../utils/netflix-logo-removebg-preview.png'
 import Avatar from '../utils/avatar.png'
 import './Nav.css'
@@ -18,19 +18,18 @@ const Nav = () => {
         }
     }
     useEffect(() => {
-        const transition = window.addEventListener("scroll", transitioNavbar)
+       window.addEventListener("scroll", transitioNavbar)
         return () => {
-            transition();
+            window.removeEventListener("scroll",transitioNavbar)
           }
     },[])
     return (
         <div className={`${show && 'nav'}`}>
             <div className="nav__content">
-                <img className="nav__logo" src={Logo} alt="Netflix-Logo" onClick={()=>{history.push("/")}}></img>
+                <img className="nav__logo" src={Logo} alt="Netflix-Logo" onClick={() => { history.push("/") }}></img>
                 <img className="avatar" src={Avatar} alt="User-avatar" onClick={() => {setdropdown(!dropdown)}}></img>
                 {dropdown && <div className="dropdown">
                     <div className="dropdown__content">
-                        
                             <p>Help</p>
                             <p onClick={()=>auth.signOut()}>Sign Out</p>
                        

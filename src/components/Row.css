@@ -9,6 +9,7 @@ h1{
     display: flex;
     overflow-y:hidden;
     overflow-x: scroll;
+
 }
 .row__img::-webkit-scrollbar {
     display: none;
@@ -16,8 +17,37 @@ h1{
 .row_img{
     height: 160px !important;
     padding: 5px;
-    border-radius: 8%;
+    border-radius: 10px;
+    transition: all 0.5s ease-in-out;
+
+
 }
 .row_img:hover{
-    transform: scale(1.2);
+    transform: scale(1.08);
+    opacity: 1;
 }
+.tooltip {
+    position: relative;
+   
+   
+  }
+  
+.tooltip 
+.tooltiptext {
+    visibility: hidden;
+    width: 100px;
+    background-color: black;
+    opacity: 0.8;
+    color: #fff;
+    text-align: center;
+  
+    padding: 5px 0;
+    /* Position the tooltip */
+    position: absolute;
+    font-size: 12px;
+    z-index: 1;
+  }
+  
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
+  }

@@ -1,16 +1,18 @@
 import React, { useRef }from 'react'
+import { useHistory } from 'react-router';
 import { auth } from '../firebase';
 import './SignIn.css'
 
 const SignIn = () => {
+    const history=useHistory()
     const emailRef = useRef(null);
     const passwordRef = useRef(null);
-    const registerUser = (e) => {
-        e.preventDefault();
-        auth.createUserWithEmailAndPassword(emailRef.current.value, passwordRef.current.value)
-            .then(authUser => console.log(authUser))
-            .catch(err => alert(err.message))
-    }
+    // const registerUser = (e) => {
+    //     e.preventDefault();
+    //     auth.createUserWithEmailAndPassword(emailRef.current.value, passwordRef.current.value)
+    //         .then(authUser => console.log(authUser))
+    //         .catch(err => alert(err.message))
+    // }
     const signin = (e) => {
         e.preventDefault();
         auth.signInWithEmailAndPassword(emailRef.current.value, passwordRef.current.value)
@@ -29,7 +31,7 @@ const SignIn = () => {
             </form>
             <div>
                 <p>New to Netflix
-                <span onClick={registerUser}>Sign Up Now</span></p>
+                <span onClick={()=>history.push("/Signup")}>Sign Up Now</span></p>
             </div>
             
              
