@@ -4,11 +4,14 @@ import Logo from '../utils/netflix-logo-removebg-preview.png'
 import Avatar from '../utils/avatar.png'
 import './Nav.css'
 import { auth } from '../firebase'
+import { userDetail } from '../features/userSlice'
+import {useSelector} from 'react-redux'
 
 const Nav = () => {
     const [show, handleshow] = useState(false);
     const [dropdown, setdropdown] = useState(false)
-    const history=useHistory()
+    const history = useHistory()
+    const user = useSelector(userDetail);
     const transitioNavbar = () => {
         if (window.scrollY > 100) {
             handleshow(true);
@@ -27,7 +30,9 @@ const Nav = () => {
         <div className={`${show && 'nav'}`}>
             <div className="nav__content">
                 <img className="nav__logo" src={Logo} alt="Netflix-Logo" onClick={() => { history.push("/") }}></img>
-                <img className="avatar" src={Avatar} alt="User-avatar" onMouseUp={() => {setdropdown(!dropdown)}}></img>
+                <h4 className="username">Hi, {user.name}</h4>
+                <img className="avatar" src={Avatar} alt="User-avatar" onMouseUp={() => { setdropdown(!dropdown) }}></img>
+                
                 {dropdown && <div className="dropdown">
                     <div className="dropdown__content">
                             <p>Help</p>

@@ -26,6 +26,7 @@ function App() {
           dispatch(login({
             id: userAuth.uid,
             email: userAuth.email,
+            name: userAuth.displayName,
           }))
           console.log(userAuth)
         }

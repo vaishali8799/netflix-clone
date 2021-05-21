@@ -18,6 +18,14 @@
     cursor: pointer;
     padding:15px;
     right :30px;
+}.username{
+    top:-20px;
+    position: fixed;
+    cursor: pointer;
+    padding:15px;
+    font-size: 20px;
+    font-weight: 500;
+    right :70px;
 }
 .nav{
     background-color: black;
