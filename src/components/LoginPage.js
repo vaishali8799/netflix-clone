@@ -1,10 +1,18 @@
 import React, { useState } from 'react'
 import SignIn from './SignIn'
+import { useHistory } from 'react-router';
 import './Login.css'
 import Logo from '../utils/netflix-logo-removebg-preview.png'
 
 const Login = () => {
+    
     const [signIn, setsignIn] = useState(false)
+    const history = useHistory()
+    const handleClick = (e) => {
+        e.preventDefault();
+        history.push("/Signup")
+        
+    }
     return (
         <div className="login__screen">
             <img className="login__logo" src={Logo} alt="Netflix-Logo"></img>
@@ -19,7 +27,7 @@ const Login = () => {
                         <div className="login__inputs">
                             <form>
                                 <input type="email" placeholder="Email address" required />
-                                <button className="signIn__button" >GET STARTED</button>
+                                <button className="signIn__button" onClick={handleClick } >GET STARTED</button>
                             </form>
                         </div>
                     </>

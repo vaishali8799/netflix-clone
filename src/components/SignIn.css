@@ -33,3 +33,15 @@
     cursor: pointer;
     margin-top: 10px;
 }
+.sub{
+    color: gray;
+    margin-right: 2px;
+}
+.sub>p>span{
+    color: #fff;
+}
+.sub>p>span:hover{
+    cursor: pointer;
+    text-decoration: underline;
+
+}

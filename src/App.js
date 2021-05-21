@@ -11,9 +11,12 @@ import { useEffect } from 'react';
 import { auth } from './firebase';
 import { useDispatch,useSelector } from 'react-redux'
 import SignUp from './components/SignUp';
+import Profile from './components/Profile';
 
 function App() {
   const user = useSelector(userSelect);
+  console.log(user)
+ 
   const dispatch = useDispatch();
   useEffect(() => {
     const authChange = auth.onAuthStateChanged(
@@ -23,7 +26,6 @@ function App() {
           dispatch(login({
             id: userAuth.uid,
             email: userAuth.email,
-            name:userAuth.name
           }))
           console.log(userAuth)
         }
@@ -40,25 +42,12 @@ function App() {
   return (
     <div className="App">
       <Router>
-        {!user ? (
-          <>
-            <Switch>
-            <Route exact path="/">
-              <Login/>
-            </Route>
-             <Route exact path="/Signup">
-              <SignUp/>
-            </Route>
-            </Switch>
-            </>
-         ) : (
-          <Switch>
-            <Route exact path="/">
-              <Home />
-            </Route>
-           
-          </Switch>
-      )}
+        <Switch>
+          <Route exact path="/login"><Login /></Route>
+          <Route exact path="/Signup"><SignUp /></Route>
+          <Route exact path="/Profile"><Profile/></Route>
+          {user && <Route  path="/Home"><Home/></Route>}
+       </Switch>
       </Router>
     </div>
   );

@@ -1,0 +1,44 @@
+.Profile__screen{
+    height: 100%;
+}
+.Profile__body{
+    z-index: 1;
+    width: 70vw;
+    /* background-color: black !important; */
+   
+    top: 30%;
+    left:0;
+    right: 0;
+    margin-left: auto ;
+    margin-right: auto ;
+    padding: 20px;
+}
+img{
+    width: 100px;
+    height: 100px;
+}
+.profile__content{
+  
+}
+.profile__content>form>button{
+    border: none;
+    width: 120px;
+    font-weight: 500;
+    font-size: 20px;
+    padding: 10px 20px;
+    background-color: rgb(231, 27, 27);
+    color: #fff;
+    cursor: pointer;
+    margin-top: 10px;
+}
+.user__details>input{
+    outline-width: 0;
+    width: 30%;
+    border: 0;
+    font-weight: 600;
+    color: #fff;
+    padding:5px 15px;
+    margin-bottom: 10px;
+    height: 30px;
+    background-color: rgba(119, 116, 116, 0.75);
+}

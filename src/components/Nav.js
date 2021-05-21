@@ -27,11 +27,15 @@ const Nav = () => {
         <div className={`${show && 'nav'}`}>
             <div className="nav__content">
                 <img className="nav__logo" src={Logo} alt="Netflix-Logo" onClick={() => { history.push("/") }}></img>
-                <img className="avatar" src={Avatar} alt="User-avatar" onClick={() => {setdropdown(!dropdown)}}></img>
+                <img className="avatar" src={Avatar} alt="User-avatar" onMouseUp={() => {setdropdown(!dropdown)}}></img>
                 {dropdown && <div className="dropdown">
                     <div className="dropdown__content">
                             <p>Help</p>
-                            <p onClick={()=>auth.signOut()}>Sign Out</p>
+                        <p onClick={() => {
+                            auth.signOut()
+                            history.push("/login") 
+
+                        }}>Sign Out</p>
                        
                     </div>
                 </div>}

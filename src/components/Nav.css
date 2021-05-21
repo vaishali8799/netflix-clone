@@ -21,11 +21,10 @@
 }
 .nav{
     background-color: black;
-    width: 100%;
+    width: 100vw;
     height: 60px;
     top:0;
     position: fixed;
-    display: block;
     transition-timing-function:  ease-in;
     transition:all 0.5s;
     
@@ -36,7 +35,7 @@
 }
 .dropdown__content{
     position: fixed;
-    max-width: 100px;
+    max-width: 110px;
     display: block;
     background:rgba(0,0,0,0.8);
     z-index: 1;
@@ -53,6 +52,6 @@
   display: block;
 }
 .dropdown__content>p:hover{
-    background-color: #fff;
-    color: black;
+    background-color:gray;
+   
 }
