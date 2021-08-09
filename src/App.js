@@ -44,7 +44,7 @@ function App() {
     <div className="App">
       <Router>
         <Switch>
-          <Route exact path="/login"><Login /></Route>
+          <Route exact path="/"><Login /></Route>
           <Route exact path="/Signup"><SignUp /></Route>
           <Route exact path="/Profile"><Profile/></Route>
           {user && <Route  path="/Home"><Home/></Route>}

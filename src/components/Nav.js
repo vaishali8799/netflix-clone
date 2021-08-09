@@ -38,7 +38,7 @@ const Nav = () => {
                             <p>Help</p>
                         <p onClick={() => {
                             auth.signOut()
-                            history.push("/login") 
+                            history.push("/") 
 
                         }}>Sign Out</p>
                        
